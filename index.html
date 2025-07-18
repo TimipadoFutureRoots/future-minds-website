@@ -523,7 +523,7 @@
         /* Trust Bar */
         .trust-bar {
             background: var(--white);
-            padding: var(--space-md) 0;
+            padding: var(--space-lg) 0;
             border-top: 1px solid rgba(0, 0, 0, 0.06);
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         }
@@ -534,23 +534,25 @@
             align-items: center;
             gap: var(--space-xl);
             flex-wrap: wrap;
-            font-size: var(--text-sm);
-            color: var(--text-light);
+            font-size: var(--text-md);
+            font-weight: 600;
+            color: var(--text-dark);
         }
 
         .partner-logo {
-            opacity: 0.7;
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0.8;
+            transition: all 0.3s ease;
         }
 
         .partner-logo:hover {
             opacity: 1;
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .partner-logo img {
-            height: 40px;
+            height: 60px;
             width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
         }
 
         /* Platform Preview */
