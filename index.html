@@ -1,883 +1,4 @@
-/* Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: var(--gradient-main);
-            z-index: 1001;
-            transition: width 0.2s ease;
-        }
-
-        /* Back to Top */
-        .back-to-top {
-            position: fixed;
-            bottom: var(--space-md);
-            right: var(--space-md);
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-main);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-            box-shadow: var(--shadow);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .platform-grid,
-            .value-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .logo-main {
-                font-size: 1.2rem;
-            }
-            
-            .logo-sub {
-                display: none;
-            }
-            
-            h2 {
-                font-size: 1.75rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Progress Bar -->
-    <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <div class="logo-wrapper">
-                <div class="future-minds-logo">
-                    <div class="logo-icon">
-                        <img src="images/logo/1-1-min.png" alt="Future Minds Logo" width="35" height="35">
-                    </div>
-                </div>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <div class="dropdown">
-                    <a href="#services" class="dropdown-toggle">Services ▼</a>
-                    <div class="dropdown-menu">
-                        <a href="#students">For Students</a>
-                        <a href="#businesses">For Businesses</a>
-                        <a href="#universities">For Universities</a>
-                    </div>
-                </div>
-                <a href="#platform">Platform</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#cta" class="button button-primary">Join Waitlist</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="star-field">
-            <!-- Shooting stars -->
-            <div class="shooting-star" style="top: 20%; animation-delay: 0s;"></div>
-            <div class="shooting-star" style="top: 50%; animation-delay: 1.5s;"></div>
-            <div class="shooting-star" style="top: 80%; animation-delay: 3s;"></div>
-        </div>
-        
-        <div class="container hero-content">
-            <h1>Creating Tomorrow's Tech Leaders</h1>
-            <p class="hero-subtitle">Bridging the £63 billion skills gap through immersive experiences and innovative connections</p>
-            
-            <div class="stats-container">
-                <div class="stat">
-                    <span class="stat-number">95%</span>
-                    <span class="stat-label">Student Satisfaction</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">40%</span>
-                    <span class="stat-label">Faster Hiring</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Careers Launched</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">247+</span>
-                    <span class="stat-label">On Waitlist</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section class="social-proof">
-        <div class="container">
-            <div class="section-header">
-                <h2>Trusted by Tomorrow's Leaders</h2>
-                <p>Real stories from students and partners</p>
-            </div>
-            
-            <div class="testimonials">
-                <div class="card testimonial">
-                    <p class="testimonial-text">"Future Minds completely changed my perspective on career opportunities. The Amazon insight day was incredible!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JW</div>
-                        <div>
-                            <strong>James Wilson</strong><br>
-                            <small>Computer Science, Loughborough</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card testimonial">
-                    <p class="testimonial-text">"The hackathon experience was intense but so rewarding. I made connections that led to my internship!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">PS</div>
-                        <div>
-                            <strong>Priya Sharma</strong><br>
-                            <small>Software Engineering, Birmingham</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card testimonial">
-                    <p class="testimonial-text">"Future Minds helps us find diverse talent we wouldn't reach through traditional channels."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SC</div>
-                        <div>
-                            <strong>Sarah Chen</strong><br>
-                            <small>Talent Acquisition, AWS</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Picture Roll / Event Gallery -->
-    <section class="event-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Moments That Matter</h2>
-                <p>See our community in action at Amazon Insight Days and beyond</p>
-            </div>
-            
-            <div class="gallery-carousel">
-                <div class="gallery-track">
-                    <div class="gallery-slide">
-                        <img src="images/events/4BZfKygBfbW2vLRf9VvwQ3XZ339RNMkjArklcSe8RHE=_plaintext_638442826629758708.jpg" alt="Amazon Insight Day Group Photo" class="gallery-image">
-                        <div class="gallery-caption">Amazon Insight Day - Group Success</div>
-                    </div>
-
-                    <div class="gallery-slide">
-                        <img src="images/events/HBQu6lDfAtXmyqvfimIMBfhTZ5WfnZX9w22H0PN2lnI=_plaintext_638442826645076941.jpg" alt="Professional Networking" class="gallery-image">
-                        <div class="gallery-caption">Professional Networking in Action</div>
-                    </div>
-
-                    <div class="gallery-slide">
-                        <img src="images/events/IMG-20240223-WA0004.jpg" alt="Workshop Session" class="gallery-image">
-                        <div class="gallery-caption">Hands-On Learning Workshop</div>
-                    </div>
-
-                    <div class="gallery-slide">
-                        <img src="images/events/N2vcOvQGeqqo1KWnndqne5DJsFWnLvQDgmu_tLNaY3Q=_plaintext_638442826627703652.jpg" alt="AWS Technical Session" class="gallery-image">
-                        <div class="gallery-caption">AWS Technical Session</div>
-                    </div>
-
-                    <div class="gallery-slide">
-                        <img src="images/events/fTAgRKSejqJV2r4oZVxb_6TXFNw46IOFJ8ibRd0p6RU=_plaintext_638442826631282325.jpg" alt="Student Collaboration" class="gallery-image">
-                        <div class="gallery-caption">Student Collaboration Time</div>
-                    </div>
-
-                    <div class="gallery-slide">
-                        <img src="images/events/fotk-7gPnaxZlI5L0WotoP5v6WoDAe4ruQPilJtzRng=_plaintext_638442826630421069.jpg" alt="Machine Learning Workshop" class="gallery-image">
-                        <div class="gallery-caption">Machine Learning Workshop</div>
-                    </div>
-
-                    <div class="gallery-slide">
-                        <img src="images/events/hzot_DtQmBzxEye-n1qZTtTzLiNmpmFKQ2UW_VICpak=_plaintext_638442826632190392.jpg" alt="Leadership Development" class="gallery-image">
-                        <div class="gallery-caption">Leadership & Development</div>
-                    </div>
-
-                    <div class="gallery-slide">
-                        <img src="images/events/k1OAb8uJliHY0VCVdfrdy6LdcqNe8gtruuotumzVv8k=_plaintext_638442826627302481.jpg" alt="Future Minds Community" class="gallery-image">
-                        <div class="gallery-caption">Future Minds Community</div>
-                    </div>
-
-                    <div class="gallery-slide">
-                        <img src="images/events/tZ5kk5SA7D31cCZZB-AOLE28TOJHZJBOIc7Yoeb2Yp4=_plaintext_638442826659163499.jpg" alt="Event Highlights" class="gallery-image">
-                        <div class="gallery-caption">Event Highlights</div>
-                    </div>
-                </div>
-                
-                <button class="gallery-btn gallery-btn-prev" onclick="moveGallery(-1)">‹</button>
-                <button class="gallery-btn gallery-btn-next" onclick="moveGallery(1)">›</button>
-                
-                <div class="gallery-dots">
-                    <span class="gallery-dot active" onclick="currentSlide(1)"></span>
-                    <span class="gallery-dot" onclick="currentSlide(2)"></span>
-                    <span class="gallery-dot" onclick="currentSlide(3)"></span>
-                    <span class="gallery-dot" onclick="currentSlide(4)"></span>
-                    <span class="gallery-dot" onclick="currentSlide(5)"></span>
-                    <span class="gallery-dot" onclick="currentSlide(6)"></span>
-                    <span class="gallery-dot" onclick="currentSlide(7)"></span>
-                    <span class="gallery-dot" onclick="currentSlide(8)"></span>
-                    <span class="gallery-dot" onclick="currentSlide(9)"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partner Logos -->
-    <section class="trust-bar">
-        <div class="container">
-            <div class="trust-items">
-                <span>Trusted Partners:</span>
-                <div class="partner-logo">
-                    <img src="images/partners/loughborough logo.webp" alt="Loughborough University">
-                </div>
-                <div class="partner-logo">
-                    <img src="images/partners/amazon logo.webp" alt="Amazon">
-                </div>
-                <div class="partner-logo">
-                    <img src="images/partners/Women_in_technology_Mentoring_Programme_Circle_Logo (1).png" alt="Reed Women in Technology">
-                </div>
-                <div class="partner-logo">
-                    <img src="images/partners/ieeh logo.png" alt="IEEH">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Platform Preview -->
-    <section id="platform" class="platform-preview">
-        <div class="container">
-            <div class="section-header">
-                <h2>Platform Launching Q3 2025</h2>
-                <p>See how students will connect with their dream careers in just 90 seconds</p>
-            </div>
-            
-            <div class="platform-grid">
-                <div>
-                    <h3 style="margin-bottom: var(--space-md);">Coming Soon: Your Career Command Center</h3>
-                    <ul style="list-style: none; line-height: 2;">
-                        <li>✓ Smart matching with top companies</li>
-                        <li>✓ Real-time event discovery</li>
-                        <li>✓ Direct recruiter connections</li>
-                        <li>✓ Progress tracking & achievements</li>
-                    </ul>
-                    <a href="#cta" class="button button-primary" style="margin-top: var(--space-md);">Join the Waitlist</a>
-                </div>
-                
-                <div class="video-placeholder">
-                    <div class="play-button" onclick="alert('Platform demo coming soon! Join the waitlist to be notified.')">
-                        <svg width="30" height="30" fill="white">
-                            <polygon points="10,5 25,15 10,25" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Props -->
-    <section class="value-props">
-        <div class="container">
-            <div class="section-header">
-                <h2>Transform Your Journey</h2>
-                <p>Real solutions to real problems</p>
-            </div>
-            
-            <div class="value-grid">
-                <div class="value-card">
-                    <div class="value-icon">🎓</div>
-                    <h3>For Students</h3>
-                    <p class="value-before">Endless applications, no responses</p>
-                    <p class="value-after">→ Direct connections with recruiters</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">🏢</div>
-                    <h3>For Companies</h3>
-                    <p class="value-before">Filtering through 1000s of CVs</p>
-                    <p class="value-after">→ Pre-vetted, engaged talent</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">🏛️</div>
-                    <h3>For Universities</h3>
-                    <p class="value-before">Struggling with employment rates</p>
-                    <p class="value-after">→ Industry partnerships that deliver</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="events">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Comprehensive solutions for students, businesses, and universities.</p>
-            </div>
-            
-            <div class="events-grid">
-                <div class="card event-card">
-                    <div class="card-header">🚀 EXPLORE</div>
-                    <h3>Get Inspired by Industry Leaders</h3>
-                    <p>From <strong>Insight Days</strong> with top tech firms to behind-the-scenes career talks, we open doors to new possibilities in tech, design, innovation and beyond.</p>
-                    <a href="#students" class="service-link">For Students →</a>
-                </div>
-                
-                <div class="card event-card">
-                    <div class="card-header">🔧 BUILD</div>
-                    <h3>Level Up Your Skills Through Hands-On Learning</h3>
-                    <p>Our <strong>UX/UI Bootcamps</strong>, <strong>Tech Workshops</strong>, and <strong>Coding 101</strong> sessions are designed to help you grow — whether you're a beginner or building your portfolio.</p>
-                    <a href="#students" class="service-link">For Students →</a>
-                </div>
-                
-                <div class="card event-card">
-                    <div class="card-header">🔍 CHALLENGE</div>
-                    <h3>Tackle Real-World Problems with Creativity</h3>
-                    <p>From <strong>24-hour Hackathons</strong> to innovation sprints, we give you the chance to solve real challenges from real companies — and pitch your ideas.</p>
-                    <a href="#businesses" class="service-link">For Businesses →</a>
-                </div>
-                
-                <div class="card event-card">
-                    <div class="card-header">🧠 CONNECT</div>
-                    <h3>Network with Industry Pros and Future Leaders</h3>
-                    <p>Join <strong>Leadership Breakfasts</strong> and roundtables to meet professionals, potential mentors, and peers building the future of work and innovation.</p>
-                    <a href="#students" class="service-link">For Students →</a>
-                </div>
-                
-                <div class="card event-card">
-                    <div class="card-header">🤝 COLLABORATE</div>
-                    <h3>Work on Live Projects That Matter</h3>
-                    <p>We partner with companies to offer real briefs and micro-internships — you'll get to <strong>collaborate on actual business challenges</strong> and build experience that counts.</p>
-                    <a href="#businesses" class="service-link">For Businesses →</a>
-                </div>
-                
-                <div class="card event-card">
-                    <div class="card-header">🎨 CREATE</div>
-                    <h3>Unlock Your Creative Side While Building Confidence</h3>
-                    <p>Through sessions like <strong>Paint & Sip for Personal Growth</strong> and <strong>Design Thinking Labs</strong>, we help you grow creatively and professionally — in a relaxed, expressive space.</p>
-                    <a href="#students" class="service-link">For Students →</a>
-                </div>
-                
-                <div class="card event-card">
-                    <div class="card-header">🎉 VIBE</div>
-                    <h3>Have Fun, Make Friends, and Be Yourself</h3>
-                    <p>Whether it's our <strong>book club</strong>, <strong>game nights</strong>, or <strong>community socials</strong>, Future Minds is also about joy, culture, and finding your people.</p>
-                    <a href="#students" class="service-link">For Students →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Students Page Content -->
-    <section id="students" class="value-props" style="display: none;">
-        <div class="container">
-            <div class="section-header">
-                <h2>For Students</h2>
-                <p>Transform your career journey with hands-on experiences</p>
-            </div>
-            
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Match and engage with a personalised UK network</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Access exclusive industry insight days with top tech companies</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Build your portfolio through real-world challenges</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Connect directly with recruiters and hiring managers</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Gain mentorship from industry professionals</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Participate in paid micro-internships</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Join a supportive community of ambitious peers</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Businesses Page Content -->
-    <section id="businesses" class="value-props" style="display: none;">
-        <div class="container">
-            <div class="section-header">
-                <h2>For Businesses</h2>
-                <p>Access pre-vetted, diverse talent for your organization</p>
-            </div>
-            
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Connect with diverse, motivated STEM talent</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Reduce hiring time by 40% through pre-vetted candidates</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Host sponsored insight days to showcase your company</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Access to university partnerships across the UK</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Get real project solutions through hackathons</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Build your employer brand with Gen Z talent</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Flexible partnership packages to suit your needs</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Universities Page Content -->
-    <section id="universities" class="value-props" style="display: none;">
-        <div class="container">
-            <div class="section-header">
-                <h2>For Universities</h2>
-                <p>Enhance student outcomes and industry partnerships</p>
-            </div>
-            
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Improve graduate employment rates and outcomes</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Access to exclusive industry partnership opportunities</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Enhanced careers service offerings for students</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Co-branded events and workshops on campus</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Direct links to top employers for your students</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Data insights on student engagement and outcomes</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="checkmark">✔️</span>
-                    <span>Support for diversity and inclusion initiatives</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Ready to transform your future? Let's start the conversation.</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>📧 Email Us</h3>
-                        <p><a href="mailto:futuremindsgroupuk@gmail.com">futuremindsgroupuk@gmail.com</a></p>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <h3>📱 Follow Us</h3>
-                        <p><a href="https://instagram.com/futuremindsuk" target="_blank">@futuremindsuk</a></p>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <h3>📍 Location</h3>
-                        <p>Based in the Midlands, UK<br>Serving universities nationwide</p>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <h3>🚀 Quick Start</h3>
-                        <p>Join our waitlist below to get early access to events and platform features</p>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h3>Send us a message</h3>
-                    <form class="contact-form-fields">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <select required>
-                            <option value="">I'm interested in...</option>
-                            <option value="student">Services for Students</option>
-                            <option value="business">Partnership Opportunities</option>
-                            <option value="university">University Collaboration</option>
-                            <option value="general">General Inquiry</option>
-                        </select>
-                        <textarea placeholder="Your Message" rows="4" required></textarea>
-                        <button type="submit" class="button button-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Metrics -->
-    <section class="success-metrics">
-        <div class="container">
-            <div class="section-header">
-                <h2>Proven Impact</h2>
-                <p>Amazon Insight Day Success Story</p>
-            </div>
-            
-            <div class="metrics-grid">
-                <div>
-                    <div class="metric-circle">
-                        <span class="metric-value">4.79/5</span>
-                    </div>
-                    <p>Event Rating</p>
-                </div>
-                <div>
-                    <div class="metric-circle">
-                        <span class="metric-value">95%</span>
-                    </div>
-                    <p>Career Impact</p>
-                </div>
-                <div>
-                    <div class="metric-circle">
-                        <span class="metric-value">100%</span>
-                    </div>
-                    <p>Want More</p>
-                </div>
-                <div>
-                    <div class="metric-circle">
-                        <span class="metric-value">7 Days</span>
-                    </div>
-                    <p>Selection Time</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2>Your Questions Answered</h2>
-                <p>Everything you need to know</p>
-            </div>
-            
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        How is this different from LinkedIn?
-                    </button>
-                    <div class="faq-answer">
-                        <p>Unlike LinkedIn, Future Minds focuses specifically on early-career STEM talent with curated events, hands-on workshops, and direct company connections. Our platform includes gamification and exclusive opportunities.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        Is it free for students?
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! The platform is completely free for students. Most events are sponsored by our partner companies.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        Which universities are you partnered with?
-                    </button>
-                    <div class="faq-answer">
-                        <p>We're currently partnered with Loughborough, Birmingham, Nottingham, Leicester, and Warwick universities, expanding across the UK.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Preview -->
-    <section class="blog">
-        <div class="container">
-            <div class="section-header">
-                <h2>Latest Insights</h2>
-                <p>Stay ahead with our career resources</p>
-            </div>
-            
-            <div class="blog-grid">
-                <div class="card">
-                    <span class="blog-tag">Interview Tips</span>
-                    <h3>How to Ace Your Tech Interview</h3>
-                    <p>Master the STAR method and technical questions...</p>
-                </div>
-                
-                <div class="card">
-                    <span class="blog-tag">Success Story</span>
-                    <h3>From Classroom to AWS</h3>
-                    <p>How Maya leveraged Future Minds to land her dream role...</p>
-                </div>
-                
-                <div class="card">
-                    <span class="blog-tag">Industry Trends</span>
-                    <h3>Top Tech Skills for 2025</h3>
-                    <p>What employers are really looking for...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="cta" class="cta-section">
-        <div class="container">
-            <h2>Ready to Transform Your Future?</h2>
-            <p style="margin-bottom: var(--space-lg); font-size: var(--text-md);">Join 247+ students already on the waitlist</p>
-            
-            <p style="margin-bottom: var(--space-md); font-weight: 600;">🔥 Only 50 founding member spots available</p>
-            
-            <!-- Google Form Embed -->
-            <div style="max-width: 640px; margin: 0 auto;">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScX3H_3D-L6KhL3o8FHlH9MZmSUQs7V0HeVZYsMf8LbKwLJcQ/viewform?embedded=true" 
-                        width="100%" 
-                        height="800" 
-                        frameborder="0" 
-                        marginheight="0" 
-                        marginwidth="0"
-                        style="border-radius: var(--radius); box-shadow: var(--shadow);">
-                    Loading…
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <p>© 2025 Future Minds UK • Transforming Tech Talent • Based in the Midlands</p>
-            <p style="margin-top: var(--space-sm);">
-                <a href="mailto:futuremindsgroupuk@gmail.com">futuremindsgroupuk@gmail.com</a> • 
-                <a href="https://instagram.com/futuremindsuk" target="_blank">@futuremindsuk</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- Back to Top -->
-    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
-        <svg width="20" height="20" fill="white">
-            <path d="M10 5 L15 15 L5 15 Z" />
-        </svg>
-    </div>
-
-    <script>
-        // Progress Bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progressBar').style.width = scrolled + '%';
-            
-            // Back to top visibility
-            if (window.pageYOffset > 300) {
-                document.getElementById('backToTop').classList.add('visible');
-            } else {
-                document.getElementById('backToTop').classList.remove('visible');
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Back to top
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // FAQ toggle
-        function toggleFAQ(button) {
-            const item = button.parentElement;
-            item.classList.toggle('active');
-        }
-
-        // Gallery functionality - Updated for 9 images
-        let currentSlideIndex = 0;
-        const totalSlides = 9;
-
-        function moveGallery(direction) {
-            currentSlideIndex += direction;
-            
-            if (currentSlideIndex >= totalSlides) {
-                currentSlideIndex = 0;
-            } else if (currentSlideIndex < 0) {
-                currentSlideIndex = totalSlides - 1;
-            }
-            
-            updateGallery();
-        }
-
-        function currentSlide(n) {
-            currentSlideIndex = n - 1;
-            updateGallery();
-        }
-
-        function updateGallery() {
-            const track = document.querySelector('.gallery-track');
-            const dots = document.querySelectorAll('.gallery-dot');
-            
-            if (track) {
-                track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-            }
-            
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlideIndex);
-            });
-        }
-
-        // Auto-play gallery
-        setInterval(() => {
-            moveGallery(1);
-        }, 5000);
-
-        // Section navigation
-        function showSection(sectionId) {
-            // Hide all service sections
-            const sections = ['students', 'businesses', 'universities'];
-            sections.forEach(id => {
-                const section = document.getElementById(id);
-                if (section) {
-                    section.style.display = 'none';
-                }
-            });
-            
-            // Show the requested section
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.style.display = 'block';
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Update service links to use the new navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const serviceLinks = document.querySelectorAll('.service-link');
-            serviceLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const href = this.getAttribute('href');
-                    const sectionId = href.replace('#', '');
-                    showSection(sectionId);
-                });
-            });
-            
-            // Handle dropdown links
-            const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
-            dropdownLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const href = this.getAttribute('href');
-                    const sectionId = href.replace('#', '');
-                    showSection(sectionId);
-                });
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        // Apply to all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'all 0.8s ease';
-            observer.observe(section);
-        });
-
-        // Generate random twinkling stars
-        const starField = document.querySelector('.star-field');
-        if (starField) {
-            for (let i = 0; i < 75; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 4 + 's';
-                starField.appendChild(star);
-            }
-        }
-    </script>
-</body>
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -1903,3 +1024,873 @@
             z-index: 1001;
             transition: width 0.2s ease;
         }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-md);
+            right: var(--space-md);
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-main);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .platform-grid,
+            .value-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-main {
+                font-size: 1.2rem;
+            }
+            
+            .logo-sub {
+                display: none;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo-wrapper">
+                <div class="future-minds-logo">
+                    <div class="logo-icon">
+                        <img src="images/logo/1-1-min.png" alt="Future Minds Logo" width="35" height="35">
+                    </div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <div class="dropdown">
+                    <a href="#services" class="dropdown-toggle">Services ▼</a>
+                    <div class="dropdown-menu">
+                        <a href="#students">For Students</a>
+                        <a href="#businesses">For Businesses</a>
+                        <a href="#universities">For Universities</a>
+                    </div>
+                </div>
+                <a href="#platform">Platform</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#cta" class="button button-primary">Join Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="star-field">
+            <!-- Shooting stars -->
+            <div class="shooting-star" style="top: 20%; animation-delay: 0s;"></div>
+            <div class="shooting-star" style="top: 50%; animation-delay: 1.5s;"></div>
+            <div class="shooting-star" style="top: 80%; animation-delay: 3s;"></div>
+        </div>
+        
+        <div class="container hero-content">
+            <h1>Creating Tomorrow's Tech Leaders</h1>
+            <p class="hero-subtitle">Bridging the £63 billion skills gap through immersive experiences and innovative connections</p>
+            
+            <div class="stats-container">
+                <div class="stat">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Student Satisfaction</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">40%</span>
+                    <span class="stat-label">Faster Hiring</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Careers Launched</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">247+</span>
+                    <span class="stat-label">On Waitlist</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Tomorrow's Leaders</h2>
+                <p>Real stories from students and partners</p>
+            </div>
+            
+            <div class="testimonials">
+                <div class="card testimonial">
+                    <p class="testimonial-text">"Future Minds completely changed my perspective on career opportunities. The Amazon insight day was incredible!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JW</div>
+                        <div>
+                            <strong>James Wilson</strong><br>
+                            <small>Computer Science, Loughborough</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card testimonial">
+                    <p class="testimonial-text">"The hackathon experience was intense but so rewarding. I made connections that led to my internship!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PS</div>
+                        <div>
+                            <strong>Priya Sharma</strong><br>
+                            <small>Software Engineering, Birmingham</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card testimonial">
+                    <p class="testimonial-text">"Future Minds helps us find diverse talent we wouldn't reach through traditional channels."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SC</div>
+                        <div>
+                            <strong>Sarah Chen</strong><br>
+                            <small>Talent Acquisition, AWS</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Picture Roll / Event Gallery -->
+    <section class="event-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Moments That Matter</h2>
+                <p>See our community in action at Amazon Insight Days and beyond</p>
+            </div>
+            
+            <div class="gallery-carousel">
+                <div class="gallery-track">
+                    <div class="gallery-slide">
+                        <img src="images/events/4BZfKygBfbW2vLRf9VvwQ3XZ339RNMkjArklcSe8RHE=_plaintext_638442826629758708.jpg" alt="Amazon Insight Day Group Photo" class="gallery-image">
+                        <div class="gallery-caption">Amazon Insight Day - Group Success</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="images/events/HBQu6lDfAtXmyqvfimIMBfhTZ5WfnZX9w22H0PN2lnI=_plaintext_638442826645076941.jpg" alt="Professional Networking" class="gallery-image">
+                        <div class="gallery-caption">Professional Networking in Action</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="images/events/IMG-20240223-WA0004.jpg" alt="Workshop Session" class="gallery-image">
+                        <div class="gallery-caption">Hands-On Learning Workshop</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="images/events/N2vcOvQGeqqo1KWnndqne5DJsFWnLvQDgmu_tLNaY3Q=_plaintext_638442826627703652.jpg" alt="AWS Technical Session" class="gallery-image">
+                        <div class="gallery-caption">AWS Technical Session</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="images/events/fTAgRKSejqJV2r4oZVxb_6TXFNw46IOFJ8ibRd0p6RU=_plaintext_638442826631282325.jpg" alt="Student Collaboration" class="gallery-image">
+                        <div class="gallery-caption">Student Collaboration Time</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="images/events/fotk-7gPnaxZlI5L0WotoP5v6WoDAe4ruQPilJtzRng=_plaintext_638442826630421069.jpg" alt="Machine Learning Workshop" class="gallery-image">
+                        <div class="gallery-caption">Machine Learning Workshop</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="images/events/hzot_DtQmBzxEye-n1qZTtTzLiNmpmFKQ2UW_VICpak=_plaintext_638442826632190392.jpg" alt="Leadership Development" class="gallery-image">
+                        <div class="gallery-caption">Leadership & Development</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="images/events/k1OAb8uJliHY0VCVdfrdy6LdcqNe8gtruuotumzVv8k=_plaintext_638442826627302481.jpg" alt="Future Minds Community" class="gallery-image">
+                        <div class="gallery-caption">Future Minds Community</div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <img src="images/events/tZ5kk5SA7D31cCZZB-AOLE28TOJHZJBOIc7Yoeb2Yp4=_plaintext_638442826659163499.jpg" alt="Event Highlights" class="gallery-image">
+                        <div class="gallery-caption">Event Highlights</div>
+                    </div>
+                </div>
+                
+                <button class="gallery-btn gallery-btn-prev" onclick="moveGallery(-1)">‹</button>
+                <button class="gallery-btn gallery-btn-next" onclick="moveGallery(1)">›</button>
+                
+                <div class="gallery-dots">
+                    <span class="gallery-dot active" onclick="currentSlide(1)"></span>
+                    <span class="gallery-dot" onclick="currentSlide(2)"></span>
+                    <span class="gallery-dot" onclick="currentSlide(3)"></span>
+                    <span class="gallery-dot" onclick="currentSlide(4)"></span>
+                    <span class="gallery-dot" onclick="currentSlide(5)"></span>
+                    <span class="gallery-dot" onclick="currentSlide(6)"></span>
+                    <span class="gallery-dot" onclick="currentSlide(7)"></span>
+                    <span class="gallery-dot" onclick="currentSlide(8)"></span>
+                    <span class="gallery-dot" onclick="currentSlide(9)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Logos -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <span>Trusted Partners:</span>
+                <div class="partner-logo">
+                    <img src="images/partners/loughborough logo.webp" alt="Loughborough University">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/partners/amazon logo.webp" alt="Amazon">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/partners/Women_in_technology_Mentoring_Programme_Circle_Logo (1).png" alt="Reed Women in Technology">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/partners/ieeh logo.png" alt="IEEH">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Preview -->
+    <section id="platform" class="platform-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Platform Launching Q3 2025</h2>
+                <p>See how students will connect with their dream careers in just 90 seconds</p>
+            </div>
+            
+            <div class="platform-grid">
+                <div>
+                    <h3 style="margin-bottom: var(--space-md);">Coming Soon: Your Career Command Center</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>✓ Smart matching with top companies</li>
+                        <li>✓ Real-time event discovery</li>
+                        <li>✓ Direct recruiter connections</li>
+                        <li>✓ Progress tracking & achievements</li>
+                    </ul>
+                    <a href="#cta" class="button button-primary" style="margin-top: var(--space-md);">Join the Waitlist</a>
+                </div>
+                
+                <div class="video-placeholder">
+                    <div class="play-button" onclick="alert('Platform demo coming soon! Join the waitlist to be notified.')">
+                        <svg width="30" height="30" fill="white">
+                            <polygon points="10,5 25,15 10,25" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="value-props">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transform Your Journey</h2>
+                <p>Real solutions to real problems</p>
+            </div>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎓</div>
+                    <h3>For Students</h3>
+                    <p class="value-before">Endless applications, no responses</p>
+                    <p class="value-after">→ Direct connections with recruiters</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🏢</div>
+                    <h3>For Companies</h3>
+                    <p class="value-before">Filtering through 1000s of CVs</p>
+                    <p class="value-after">→ Pre-vetted, engaged talent</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🏛️</div>
+                    <h3>For Universities</h3>
+                    <p class="value-before">Struggling with employment rates</p>
+                    <p class="value-after">→ Industry partnerships that deliver</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions for students, businesses, and universities.</p>
+            </div>
+            
+            <div class="events-grid">
+                <div class="card event-card">
+                    <div class="card-header">🚀 EXPLORE</div>
+                    <h3>Get Inspired by Industry Leaders</h3>
+                    <p>From <strong>Insight Days</strong> with top tech firms to behind-the-scenes career talks, we open doors to new possibilities in tech, design, innovation and beyond.</p>
+                    <a href="#students" class="service-link">For Students →</a>
+                </div>
+                
+                <div class="card event-card">
+                    <div class="card-header">🔧 BUILD</div>
+                    <h3>Level Up Your Skills Through Hands-On Learning</h3>
+                    <p>Our <strong>UX/UI Bootcamps</strong>, <strong>Tech Workshops</strong>, and <strong>Coding 101</strong> sessions are designed to help you grow — whether you're a beginner or building your portfolio.</p>
+                    <a href="#students" class="service-link">For Students →</a>
+                </div>
+                
+                <div class="card event-card">
+                    <div class="card-header">🔍 CHALLENGE</div>
+                    <h3>Tackle Real-World Problems with Creativity</h3>
+                    <p>From <strong>24-hour Hackathons</strong> to innovation sprints, we give you the chance to solve real challenges from real companies — and pitch your ideas.</p>
+                    <a href="#businesses" class="service-link">For Businesses →</a>
+                </div>
+                
+                <div class="card event-card">
+                    <div class="card-header">🧠 CONNECT</div>
+                    <h3>Network with Industry Pros and Future Leaders</h3>
+                    <p>Join <strong>Leadership Breakfasts</strong> and roundtables to meet professionals, potential mentors, and peers building the future of work and innovation.</p>
+                    <a href="#students" class="service-link">For Students →</a>
+                </div>
+                
+                <div class="card event-card">
+                    <div class="card-header">🤝 COLLABORATE</div>
+                    <h3>Work on Live Projects That Matter</h3>
+                    <p>We partner with companies to offer real briefs and micro-internships — you'll get to <strong>collaborate on actual business challenges</strong> and build experience that counts.</p>
+                    <a href="#businesses" class="service-link">For Businesses →</a>
+                </div>
+                
+                <div class="card event-card">
+                    <div class="card-header">🎨 CREATE</div>
+                    <h3>Unlock Your Creative Side While Building Confidence</h3>
+                    <p>Through sessions like <strong>Paint & Sip for Personal Growth</strong> and <strong>Design Thinking Labs</strong>, we help you grow creatively and professionally — in a relaxed, expressive space.</p>
+                    <a href="#students" class="service-link">For Students →</a>
+                </div>
+                
+                <div class="card event-card">
+                    <div class="card-header">🎉 VIBE</div>
+                    <h3>Have Fun, Make Friends, and Be Yourself</h3>
+                    <p>Whether it's our <strong>book club</strong>, <strong>game nights</strong>, or <strong>community socials</strong>, Future Minds is also about joy, culture, and finding your people.</p>
+                    <a href="#students" class="service-link">For Students →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Students Page Content -->
+    <section id="students" class="value-props" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>For Students</h2>
+                <p>Transform your career journey with hands-on experiences</p>
+            </div>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Match and engage with a personalised UK network</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Access exclusive industry insight days with top tech companies</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Build your portfolio through real-world challenges</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Connect directly with recruiters and hiring managers</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Gain mentorship from industry professionals</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Participate in paid micro-internships</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Join a supportive community of ambitious peers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Businesses Page Content -->
+    <section id="businesses" class="value-props" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>For Businesses</h2>
+                <p>Access pre-vetted, diverse talent for your organization</p>
+            </div>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Connect with diverse, motivated STEM talent</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Reduce hiring time by 40% through pre-vetted candidates</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Host sponsored insight days to showcase your company</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Access to university partnerships across the UK</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Get real project solutions through hackathons</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Build your employer brand with Gen Z talent</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Flexible partnership packages to suit your needs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Universities Page Content -->
+    <section id="universities" class="value-props" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>For Universities</h2>
+                <p>Enhance student outcomes and industry partnerships</p>
+            </div>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Improve graduate employment rates and outcomes</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Access to exclusive industry partnership opportunities</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Enhanced careers service offerings for students</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Co-branded events and workshops on campus</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Direct links to top employers for your students</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Data insights on student engagement and outcomes</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✔️</span>
+                    <span>Support for diversity and inclusion initiatives</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to transform your future? Let's start the conversation.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📧 Email Us</h3>
+                        <p><a href="mailto:futuremindsgroupuk@gmail.com">futuremindsgroupuk@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>📱 Follow Us</h3>
+                        <p><a href="https://instagram.com/futuremindsuk" target="_blank">@futuremindsuk</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>📍 Location</h3>
+                        <p>Based in the Midlands, UK<br>Serving universities nationwide</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>🚀 Quick Start</h3>
+                        <p>Join our waitlist below to get early access to events and platform features</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a message</h3>
+                    <form class="contact-form-fields">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <select required>
+                            <option value="">I'm interested in...</option>
+                            <option value="student">Services for Students</option>
+                            <option value="business">Partnership Opportunities</option>
+                            <option value="university">University Collaboration</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit" class="button button-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Metrics -->
+    <section class="success-metrics">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proven Impact</h2>
+                <p>Amazon Insight Day Success Story</p>
+            </div>
+            
+            <div class="metrics-grid">
+                <div>
+                    <div class="metric-circle">
+                        <span class="metric-value">4.79/5</span>
+                    </div>
+                    <p>Event Rating</p>
+                </div>
+                <div>
+                    <div class="metric-circle">
+                        <span class="metric-value">95%</span>
+                    </div>
+                    <p>Career Impact</p>
+                </div>
+                <div>
+                    <div class="metric-circle">
+                        <span class="metric-value">100%</span>
+                    </div>
+                    <p>Want More</p>
+                </div>
+                <div>
+                    <div class="metric-circle">
+                        <span class="metric-value">7 Days</span>
+                    </div>
+                    <p>Selection Time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Questions Answered</h2>
+                <p>Everything you need to know</p>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How is this different from LinkedIn?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Unlike LinkedIn, Future Minds focuses specifically on early-career STEM talent with curated events, hands-on workshops, and direct company connections. Our platform includes gamification and exclusive opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is it free for students?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! The platform is completely free for students. Most events are sponsored by our partner companies.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Which universities are you partnered with?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We're currently partnered with Loughborough, Birmingham, Nottingham, Leicester, and Warwick universities, expanding across the UK.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Insights</h2>
+                <p>Stay ahead with our career resources</p>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="card">
+                    <span class="blog-tag">Interview Tips</span>
+                    <h3>How to Ace Your Tech Interview</h3>
+                    <p>Master the STAR method and technical questions...</p>
+                </div>
+                
+                <div class="card">
+                    <span class="blog-tag">Success Story</span>
+                    <h3>From Classroom to AWS</h3>
+                    <p>How Maya leveraged Future Minds to land her dream role...</p>
+                </div>
+                
+                <div class="card">
+                    <span class="blog-tag">Industry Trends</span>
+                    <h3>Top Tech Skills for 2025</h3>
+                    <p>What employers are really looking for...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Future?</h2>
+            <p style="margin-bottom: var(--space-lg); font-size: var(--text-md);">Join 247+ students already on the waitlist</p>
+            
+            <p style="margin-bottom: var(--space-md); font-weight: 600;">🔥 Only 50 founding member spots available</p>
+            
+            <!-- Google Form Embed -->
+            <div style="max-width: 640px; margin: 0 auto;">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScX3H_3D-L6KhL3o8FHlH9MZmSUQs7V0HeVZYsMf8LbKwLJcQ/viewform?embedded=true" 
+                        width="100%" 
+                        height="800" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        style="border-radius: var(--radius); box-shadow: var(--shadow);">
+                    Loading…
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>© 2025 Future Minds UK • Transforming Tech Talent • Based in the Midlands</p>
+            <p style="margin-top: var(--space-sm);">
+                <a href="mailto:futuremindsgroupuk@gmail.com">futuremindsgroupuk@gmail.com</a> • 
+                <a href="https://instagram.com/futuremindsuk" target="_blank">@futuremindsuk</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <svg width="20" height="20" fill="white">
+            <path d="M10 5 L15 15 L5 15 Z" />
+        </svg>
+    </div>
+
+    <script>
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+            
+            // Back to top visibility
+            if (window.pageYOffset > 300) {
+                document.getElementById('backToTop').classList.add('visible');
+            } else {
+                document.getElementById('backToTop').classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Back to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // FAQ toggle
+        function toggleFAQ(button) {
+            const item = button.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // Gallery functionality - Updated for 9 images
+        let currentSlideIndex = 0;
+        const totalSlides = 9;
+
+        function moveGallery(direction) {
+            currentSlideIndex += direction;
+            
+            if (currentSlideIndex >= totalSlides) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = totalSlides - 1;
+            }
+            
+            updateGallery();
+        }
+
+        function currentSlide(n) {
+            currentSlideIndex = n - 1;
+            updateGallery();
+        }
+
+        function updateGallery() {
+            const track = document.querySelector('.gallery-track');
+            const dots = document.querySelectorAll('.gallery-dot');
+            
+            if (track) {
+                track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            }
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlideIndex);
+            });
+        }
+
+        // Auto-play gallery
+        setInterval(() => {
+            moveGallery(1);
+        }, 5000);
+
+        // Section navigation
+        function showSection(sectionId) {
+            // Hide all service sections
+            const sections = ['students', 'businesses', 'universities'];
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) {
+                    section.style.display = 'none';
+                }
+            });
+            
+            // Show the requested section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Update service links to use the new navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceLinks = document.querySelectorAll('.service-link');
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const sectionId = href.replace('#', '');
+                    showSection(sectionId);
+                });
+            });
+            
+            // Handle dropdown links
+            const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const sectionId = href.replace('#', '');
+                    showSection(sectionId);
+                });
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Apply to all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Generate random twinkling stars
+        const starField = document.querySelector('.star-field');
+        if (starField) {
+            for (let i = 0; i < 75; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                starField.appendChild(star);
+            }
+        }
+    </script>
+</body>
+</html>
